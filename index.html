@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Globe Atacado</title>
+<style>body{font-family:-apple-system,sans-serif;background:#FFF9F5;color:#2C2C2A;padding:40px;max-width:900px;margin:0 auto;line-height:1.6;}h1{color:#D85A30;font-weight:500;margin-bottom:8px;}h2{color:#993C1D;font-weight:500;font-size:18px;margin-top:32px;}.status{padding:14px 18px;border-radius:10px;margin:20px 0;}.status.ok{background:#E1F5EE;color:#0F6E56;}.status.err{background:#FCEBEB;color:#A32D2D;}.card{background:#FFFFFF;border:0.5px solid rgba(0,0,0,0.1);border-radius:14px;padding:20px;margin:12px 0;}.kpi{display:inline-block;margin:0 24px 0 0;}.kpi-label{font-size:12px;color:#888780;}.kpi-value{font-size:24px;font-weight:500;color:#D85A30;}</style></head>
+<body>
+<h1>Globe Atacado · Planejamento</h1>
+<p style="color:#888780;margin-top:0;">Painel financeiro e operacional · Atacado B2B</p>
+<div id="status" class="status">Conectando ao Firebase…</div>
+<div class="card"><h2 style="margin-top:0;">Verão 27 · em curso</h2><div><span class="kpi"><div class="kpi-label">Meta receita</div><div class="kpi-value">R$ 6,5M</div></span><span class="kpi"><div class="kpi-label">D-Day</div><div class="kpi-value">02/jun</div></span><span class="kpi"><div class="kpi-label">Shooting</div><div class="kpi-value">27/mai</div></span></div></div>
+<div class="card"><h2 style="margin-top:0;">DRE 2026 (atacado)</h2><div><span class="kpi"><div class="kpi-label">Receita meta</div><div class="kpi-value">R$ 18,8M</div></span><span class="kpi"><div class="kpi-label">Custo fixo</div><div class="kpi-value">R$ 6,4M</div></span><span class="kpi"><div class="kpi-label">Margem var.</div><div class="kpi-value">40,4%</div></span></div></div>
+<div class="card"><h2 style="margin-top:0;">Próxima atualização</h2><p>Versão completa com abas (Saúde mensal · Calendário 2026 · Produção · Tecidos · Peças · DRE · Backup) será publicada na próxima atualização do repositório.</p></div>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+<script>
+firebase.initializeApp({apiKey:"AIzaSyAFJmtlHhAA1P3mROeSGflmYXFx8p-TdyY",authDomain:"globe-dashboard-ba6fa.firebaseapp.com",projectId:"globe-dashboard-ba6fa",storageBucket:"globe-dashboard-ba6fa.firebasestorage.app",messagingSenderId:"41583898531",appId:"1:41583898531:web:fa7bad30e9fea89610f416"});
+firebase.firestore().collection("planejamento").doc("hello").set({touched:new Date().toISOString()}).then(()=>{document.getElementById("status").className="status ok";document.getElementById("status").innerHTML="<strong>Firebase conectado · multi-user pronto.</strong> Cada acesso atualiza o documento de teste.";}).catch(e=>{document.getElementById("status").className="status err";document.getElementById("status").innerHTML="Erro: "+e.message;});
+</script>
+</body></html>
