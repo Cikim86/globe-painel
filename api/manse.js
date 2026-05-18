@@ -1,6 +1,7 @@
 // Vercel Serverless Function · Proxy para API xManse
 // Frontend chama: /api/manse?endpoint=/cliente/vendas&inicio=2026-01-01&fim=2026-05-15&pagina=1
 // Token armazenado em MANSE_TOKEN env var (configurado em Project Settings > Environment Variables)
+export const config = { regions: ['gru1'] };
 
 export default async function handler(req, res) {
   // CORS — só o próprio domínio do painel pode chamar
